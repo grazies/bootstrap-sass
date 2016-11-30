@@ -1,124 +1,424 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>bootstrap-sass by thomas-mcdonald</title>
-    
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
+    <title>bootstrap-sass by grazies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>bootstrap-sass</h1>
-        <p>bootstrap-sass is bootstrap for Sass, ready to roll</p>
-        <p class="view"><a href="https://github.com/thomas-mcdonald/bootstrap-sass">View the Project on GitHub <small>thomas-mcdonald/bootstrap-sass</small></a></p>
-        <ul>
-          <li><a href="https://github.com/thomas-mcdonald/bootstrap-sass/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/thomas-mcdonald/bootstrap-sass/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/thomas-mcdonald/bootstrap-sass">Fork On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>Bootstrap for Sass</h1>
+    <section class="page-header">
+      <h1 class="project-name">bootstrap-sass</h1>
+      <h2 class="project-tagline">bootstrap-sass is bootstrap for Sass, ready to roll</h2>
+      <a href="https://github.com/grazies/bootstrap-sass" class="btn">View on GitHub</a>
+      <a href="https://github.com/grazies/bootstrap-sass/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/grazies/bootstrap-sass/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-<p><code>bootstrap-sass</code> is an Sass-powered version of <a href="http://github.com/twitter/bootstrap">Twitter's Bootstrap</a>, ready to drop right into your Sass powered applications.</p>
+    <section class="main-content">
+      <h1>
+<a id="bootstrap-for-sass" class="anchor" href="#bootstrap-for-sass" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bootstrap for Sass</h1>
 
-<p>Enjoy.</p>
+<p><a href="http://badge.fury.io/rb/bootstrap-sass"><img src="https://badge.fury.io/rb/bootstrap-sass.svg" alt="Gem Version"></a>
+<a href="https://www.npmjs.com/package/bootstrap-sass"><img src="https://img.shields.io/npm/v/bootstrap-sass.svg?style=flat" alt="npm version"></a>
+<a href="http://badge.fury.io/bo/bootstrap-sass"><img src="https://badge.fury.io/bo/bootstrap-sass.svg" alt="Bower Version"></a>
+<a href="https://travis-ci.org/twbs/bootstrap-sass"><img src="https://img.shields.io/travis/twbs/bootstrap-sass.svg" alt="Build Status"></a></p>
 
-<h2>Updating</h2>
+<p><code>bootstrap-sass</code> is a Sass-powered version of <a href="https://github.com/twbs/bootstrap">Bootstrap</a> 3, ready to drop right into your Sass powered applications.</p>
 
-<p>Updating your application to a new version of <code>bootstrap-sass</code>? See <a href="https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/CHANGELOG.md">our changelog</a>, <a href="https://github.com/twitter/bootstrap/wiki/Changelog">Bootstrap's changelog</a>, and this <a href="http://twitter.github.com/bootstrap/upgrading.html">guide to updating to Bootstrap 2.0</a></p>
+<p>This is Bootstrap 3. For Bootstrap 4 use the <a href="http://github.com/twbs/bootstrap-rubygem">Bootstrap Ruby gem</a> if you use Ruby, and the <a href="http://github.com/twbs/bootstrap">main repo</a> otherwise.</p>
 
-<h2>Usage</h2>
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<h3>Rails</h3>
-
-<p>In your Gemfile:</p>
-
-<pre><code>gem 'sass-rails', '~&gt; 3.1'
-gem 'bootstrap-sass', '~&gt; 2.0.2'
-</code></pre>
-
-<h4>CSS</h4>
-
-<p>Import "bootstrap" in your SCSS file of choice to get all of Bootstrap's styles, mixins and variables! We recommend against using <code>//= require</code> directives, since none of your other stylesheets will be <a href="https://github.com/thomas-mcdonald/bootstrap-sass/issues/79#issuecomment-4428595">able to use</a> the awesome mixins that Bootstrap has defined.</p>
-
-<pre><code>@import "bootstrap";
-</code></pre>
-
-<p>Need to configure a variable or two? Simple define the value of the variable you want to change <em>before</em> importing Bootstrap. Sass will respect your existing definition rather than overwriting it with the Bootstrap defaults. A list of customisable variables can be found in the <a href="http://twitter.github.com/bootstrap/less.html#variables">Bootstrap documentation</a>.</p>
-
-<pre><code>$primaryButtonBackground: #f00;
-@import "bootstrap";
-</code></pre>
-
-<p><strong>Note</strong>: It's important that the file you are importing is not named <code>bootstrap</code>, since this will cause an import loop. As a general rule, errors are something you should try to avoid.</p>
-
-<h4>Javascripts</h4>
-
-<p>You can include the Bootstrap javascripts through two methods. In this case, Sprocket's <code>//= require</code> directives are useful, since there is no better alternative.</p>
-
-<p>We have a helper that includes all available javascripts:</p>
-
-<pre><code>// Loads all Bootstrap javascripts
-//= require bootstrap
-</code></pre>
-
-<p>You can also load individual modules, provided you sort out any related dependencies.</p>
-
-<pre><code>//= require bootstrap-scrollspy
-//= require bootstrap-modal
-//= require bootstrap-dropdown
-</code></pre>
-
-<p>Simples.</p>
-
-<h3>Compass</h3>
-
-<p><code>bootstrap-sass</code> 2.0 now comes with support for Compass, meaning projects that don't use Rails can get in on the fun Bootstrap web.</p>
-
-<h4>New project</h4>
-
-<p>Install the gem and create a new project using the gem.</p>
-
-<pre><code>gem install bootstrap-sass
-compass create compass-test -r bootstrap-sass --using bootstrap
-</code></pre>
-
-<p>This will sort a few things out:</p>
+<p>Please see the appropriate guide for your environment of choice:</p>
 
 <ul>
-<li>You'll get a starting <code>styles.scss</code> ready for your alterations</li>
-<li>You'll get a compiled stylesheet compiled &amp; ready to drop into your application</li>
-<li>We'll also copy the Bootstrap javascripts &amp; images into their respective folders for you, absolutely free of charge! How cool is that?</li>
-</ul><h4>Existing project</h4>
+<li>
+<a href="#a-ruby-on-rails">Ruby on Rails</a>.</li>
+<li>
+<a href="#b-compass-without-rails">Compass</a> not on Rails.</li>
+<li>
+<a href="#c-bower">Bower</a>.</li>
+<li>
+<a href="#d-npm--nodejs">npm / Node.js</a>.</li>
+</ul>
 
-<p>Install the gem, add the require statement to the top of your configuration file, and install the extension.</p>
+<h3>
+<a id="a-ruby-on-rails" class="anchor" href="#a-ruby-on-rails" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>a. Ruby on Rails</h3>
 
-<pre><code>gem install bootstrap-sass
+<p><code>bootstrap-sass</code> is easy to drop into Rails with the asset pipeline.</p>
 
-# In config.rb
-require 'bootstrap-sass'
+<p>In your Gemfile you need to add the <code>bootstrap-sass</code> gem, and ensure that the <code>sass-rails</code> gem is present - it is added to new Rails applications by default.</p>
 
-compass install bootstrap
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s"><span class="pl-pds">'</span>bootstrap-sass<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>~&gt; 3.3.6<span class="pl-pds">'</span></span>
+<span class="pl-k">gem</span> <span class="pl-s"><span class="pl-pds">'</span>sass-rails<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>&gt;= 3.2<span class="pl-pds">'</span></span></pre></div>
+
+<p><code>bundle install</code> and restart your server to make the files available through the pipeline.</p>
+
+<p>Import Bootstrap styles in <code>app/assets/stylesheets/application.scss</code>:</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-c">// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"</span>
+<span class="pl-k">@import</span> "<span class="pl-v">bootstrap-sprockets</span>";
+<span class="pl-k">@import</span> "<span class="pl-v">bootstrap</span>";</pre></div>
+
+<p><code>bootstrap-sprockets</code> must be imported before <code>bootstrap</code> for the icon fonts to work.</p>
+
+<p>Make sure the file has <code>.scss</code> extension (or <code>.sass</code> for Sass syntax). If you have just generated a new Rails app,
+it may come with a <code>.css</code> file instead. If this file exists, it will be served instead of Sass, so rename it:</p>
+
+<div class="highlight highlight-text-shell-session"><pre>$ <span class="pl-s1">mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss</span></pre></div>
+
+<p>Then, remove all the <code>*= require_self</code> and <code>*= require_tree .</code> statements from the sass file. Instead, use <code>@import</code> to import Sass files.</p>
+
+<p>Do not use <code>*= require</code> in Sass or your other stylesheets will not be <a href="https://github.com/twbs/bootstrap-sass/issues/79#issuecomment-4428595">able to access</a> the Bootstrap mixins or variables.</p>
+
+<p>Require Bootstrap Javascripts in <code>app/assets/javascripts/application.js</code>:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">//= require jquery</span>
+<span class="pl-c">//= require bootstrap-sprockets</span></pre></div>
+
+<p><code>bootstrap-sprockets</code> and <code>bootstrap</code> <a href="https://github.com/twbs/bootstrap-sass/issues/829#issuecomment-75153827">should not both be included</a> in <code>application.js</code>.</p>
+
+<p><code>bootstrap-sprockets</code> provides individual Bootstrap Javascript files (<code>alert.js</code> or <code>dropdown.js</code>, for example), while
+<code>bootstrap</code> provides a concatenated file containing all Bootstrap Javascripts.</p>
+
+<h4>
+<a id="bower-with-rails" class="anchor" href="#bower-with-rails" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bower with Rails</h4>
+
+<p>When using <a href="#c-bower">bootstrap-sass Bower package</a> instead of the gem in Rails, configure assets in <code>config/application.rb</code>:</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-c"># Bower asset paths</span>
+root.join(<span class="pl-s"><span class="pl-pds">'</span>vendor<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>assets<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>bower_components<span class="pl-pds">'</span></span>).to_s.tap <span class="pl-k">do </span>|<span class="pl-smi">bower_path</span>|
+  config.sass.load_paths <span class="pl-k">&lt;&lt;</span> bower_path
+  config.assets.paths <span class="pl-k">&lt;&lt;</span> bower_path
+<span class="pl-k">end</span>
+<span class="pl-c"># Precompile Bootstrap fonts</span>
+config.assets.precompile <span class="pl-k">&lt;&lt;</span> <span class="pl-sr"><span class="pl-pds">%r(</span>bootstrap-sass/assets/fonts/bootstrap/<span class="pl-pds">[<span class="pl-cce">\w</span>-]</span>+<span class="pl-cce">\.</span><span class="pl-sr">(?:eot|svg|ttf|woff2?)</span>$<span class="pl-pds">)</span></span>
+<span class="pl-c"># Minimum Sass number precision required by bootstrap-sass</span>
+::<span class="pl-c1">Sass</span>::<span class="pl-c1">Script</span>::<span class="pl-c1">Value</span>::<span class="pl-c1">Number</span>.precision <span class="pl-k">=</span> [<span class="pl-c1">8</span>, ::<span class="pl-c1">Sass</span>::<span class="pl-c1">Script</span>::<span class="pl-c1">Value</span>::<span class="pl-c1">Number</span>.precision].max</pre></div>
+
+<p>Replace Bootstrap <code>@import</code> statements in <code>application.scss</code> with:</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-smi">$icon-font-path</span>: <span class="pl-s"><span class="pl-pds">"</span>bootstrap-sass/assets/fonts/bootstrap/<span class="pl-pds">"</span></span>;
+<span class="pl-k">@import</span> "<span class="pl-v">bootstrap-sass/assets/stylesheets/bootstrap-sprockets</span>";
+<span class="pl-k">@import</span> "<span class="pl-v">bootstrap-sass/assets/stylesheets/bootstrap</span>";</pre></div>
+
+<p>Replace Bootstrap <code>require</code> directive in <code>application.js</code> with:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets</span></pre></div>
+
+<h4>
+<a id="rails-4x" class="anchor" href="#rails-4x" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rails 4.x</h4>
+
+<p>Please make sure <code>sprockets-rails</code> is at least v2.1.4.</p>
+
+<h4>
+<a id="rails-32x" class="anchor" href="#rails-32x" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rails 3.2.x</h4>
+
+<p>bootstrap-sass is no longer compatible with Rails 3. The latest version of bootstrap-sass compatible with Rails 3.2 is v3.1.1.0.</p>
+
+<h3>
+<a id="b-compass-without-rails" class="anchor" href="#b-compass-without-rails" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>b. Compass without Rails</h3>
+
+<p>Install the gem:</p>
+
+<div class="highlight highlight-text-shell-session"><pre>$ <span class="pl-s1">gem install bootstrap-sass</span></pre></div>
+
+<p>If you have an existing Compass project:</p>
+
+<ol>
+<li>
+<p>Require <code>bootstrap-sass</code> in <code>config.rb</code>:</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>bootstrap-sass<span class="pl-pds">'</span></span></pre></div>
+</li>
+<li>
+<p>Install Bootstrap with:</p>
+
+<div class="highlight highlight-text-shell-session"><pre>$ <span class="pl-s1">bundle <span class="pl-c1">exec</span> compass install bootstrap -r bootstrap-sass</span></pre></div>
+</li>
+</ol>
+
+<p>If you are creating a new Compass project, you can generate it with bootstrap-sass support:</p>
+
+<div class="highlight highlight-text-shell-session"><pre>$ <span class="pl-s1">bundle <span class="pl-c1">exec</span> compass create my-new-project -r bootstrap-sass --using bootstrap</span></pre></div>
+
+<p>or, alternatively, if you're not using a Gemfile for your dependencies:</p>
+
+<div class="highlight highlight-text-shell-session"><pre>$ <span class="pl-s1">compass create my-new-project -r bootstrap-sass --using bootstrap</span></pre></div>
+
+<p>This will create a new Compass project with the following files in it:</p>
+
+<ul>
+<li>
+<a href="/templates/project/styles.sass">styles.sass</a> - main project Sass file, imports Bootstrap and variables.</li>
+<li>
+<a href="/templates/project/_bootstrap-variables.sass">_bootstrap-variables.sass</a> - all of Bootstrap variables, override them here.</li>
+</ul>
+
+<p>Some bootstrap-sass mixins may conflict with the Compass ones.
+If this happens, change the import order so that Compass mixins are loaded later.</p>
+
+<h3>
+<a id="c-bower" class="anchor" href="#c-bower" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>c. Bower</h3>
+
+<p>bootstrap-sass Bower package is compatible with node-sass 3.2.0+. You can install it with:</p>
+
+<div class="highlight highlight-text-shell-session"><pre>$ <span class="pl-s1">bower install bootstrap-sass</span></pre></div>
+
+<p>Sass, JS, and all other assets are located at <a href="/assets">assets</a>.</p>
+
+<p>By default, <code>bower.json</code> main field list only the main <code>_bootstrap.scss</code> and all the static assets (fonts and JS).
+This is compatible by default with asset managers such as <a href="https://github.com/taptapship/wiredep">wiredep</a>.</p>
+
+<h4>
+<a id="nodejs-mincer" class="anchor" href="#nodejs-mincer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Node.js Mincer</h4>
+
+<p>If you use <a href="https://github.com/nodeca/mincer">mincer</a> with node-sass, import Bootstrap like so:</p>
+
+<p>In <code>application.css.ejs.scss</code> (NB <strong>.css.ejs.scss</strong>):</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-c">// Import mincer asset paths helper integration</span>
+<span class="pl-k">@import</span> "<span class="pl-v">bootstrap-mincer</span>";
+<span class="pl-k">@import</span> "<span class="pl-v">bootstrap</span>";</pre></div>
+
+<p>In <code>application.js</code>:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">//= require bootstrap-sprockets</span></pre></div>
+
+<p>See also this <a href="/test/dummy_node_mincer/manifest.js">example manifest.js</a> for mincer.</p>
+
+<h3>
+<a id="d-npm--nodejs" class="anchor" href="#d-npm--nodejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>d. npm / Node.js</h3>
+
+<div class="highlight highlight-text-shell-session"><pre>$ <span class="pl-s1">npm install bootstrap-sass</span></pre></div>
+
+<h2>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h2>
+
+<h3>
+<a id="sass" class="anchor" href="#sass" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sass</h3>
+
+<p>By default all of Bootstrap is imported.</p>
+
+<p>You can also import components explicitly. To start with a full list of modules copy
+<a href="assets/stylesheets/_bootstrap.scss"><code>_bootstrap.scss</code></a> file into your assets as <code>_bootstrap-custom.scss</code>.
+Then comment out components you do not want from <code>_bootstrap-custom</code>.
+In the application Sass file, replace <code>@import 'bootstrap'</code> with:</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@import</span> '<span class="pl-v">bootstrap-custom</span>';</pre></div>
+
+<h3>
+<a id="sass-number-precision" class="anchor" href="#sass-number-precision" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sass: Number Precision</h3>
+
+<p>bootstrap-sass <a href="https://github.com/twbs/bootstrap-sass/issues/409">requires</a> minimum <a href="http://sass-lang.com/documentation/Sass/Script/Value/Number.html#precision%3D-class_method">Sass number precision</a> of 8 (default is 5).</p>
+
+<p>Precision is set for Rails and Compass automatically.
+When using Ruby Sass compiler standalone or with the Bower version you can set it with:</p>
+
+<div class="highlight highlight-source-ruby"><pre>::<span class="pl-c1">Sass</span>::<span class="pl-c1">Script</span>::<span class="pl-c1">Value</span>::<span class="pl-c1">Number</span>.precision <span class="pl-k">=</span> [<span class="pl-c1">8</span>, ::<span class="pl-c1">Sass</span>::<span class="pl-c1">Script</span>::<span class="pl-c1">Value</span>::<span class="pl-c1">Number</span>.precision].max</pre></div>
+
+<h3>
+<a id="sass-autoprefixer" class="anchor" href="#sass-autoprefixer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sass: Autoprefixer</h3>
+
+<p>Bootstrap requires the use of <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>.
+<a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> adds vendor prefixes to CSS rules using values from <a href="http://caniuse.com/">Can I Use</a>.</p>
+
+<p>To match <a href="http://getbootstrap.com/getting-started/#support">upstream Bootstrap's level of browser compatibility</a>, set Autoprefixer's <code>browsers</code> option to:</p>
+
+<div class="highlight highlight-source-json"><pre>[
+  <span class="pl-s"><span class="pl-pds">"</span>Android 2.3<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>Android &gt;= 4<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>Chrome &gt;= 20<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>Firefox &gt;= 24<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>Explorer &gt;= 8<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>iOS &gt;= 6<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>Opera &gt;= 12<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>Safari &gt;= 6<span class="pl-pds">"</span></span>
+]</pre></div>
+
+<h3>
+<a id="javascript" class="anchor" href="#javascript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JavaScript</h3>
+
+<p><a href="/assets/javascripts/bootstrap.js"><code>assets/javascripts/bootstrap.js</code></a> contains all of Bootstrap's JavaScript,
+concatenated in the <a href="/assets/javascripts/bootstrap-sprockets.js">correct order</a>.</p>
+
+<h4>
+<a id="javascript-with-sprockets-or-mincer" class="anchor" href="#javascript-with-sprockets-or-mincer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JavaScript with Sprockets or Mincer</h4>
+
+<p>If you use Sprockets or Mincer, you can require <code>bootstrap-sprockets</code> instead to load the individual modules:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// Load all Bootstrap JavaScript</span>
+<span class="pl-c">//= require bootstrap-sprockets</span></pre></div>
+
+<p>You can also load individual modules, provided you also require any dependencies.
+You can check dependencies in the <a href="http://getbootstrap.com/javascript/#transitions">Bootstrap JS documentation</a>.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">//= require bootstrap/scrollspy</span>
+<span class="pl-c">//= require bootstrap/modal</span>
+<span class="pl-c">//= require bootstrap/dropdown</span></pre></div>
+
+<h3>
+<a id="fonts" class="anchor" href="#fonts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fonts</h3>
+
+<p>The fonts are referenced as:</p>
+
+<div class="highlight highlight-source-scss"><pre>"<span class="pl-smi">#{<span class="pl-smi">$icon-font-path</span>}#{<span class="pl-smi">$icon-font-name</span>}</span><span class="pl-e">.eot</span>"</pre></div>
+
+<p><code>$icon-font-path</code> defaults to <code>bootstrap/</code> if asset path helpers are used, and <code>../fonts/bootstrap/</code> otherwise.</p>
+
+<p>When using bootstrap-sass with Compass, Sprockets, or Mincer, you <strong>must</strong> import the relevant path helpers before Bootstrap itself, for example:</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@import</span> "<span class="pl-v">bootstrap-compass</span>";
+<span class="pl-k">@import</span> "<span class="pl-v">bootstrap</span>";</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a id="sass-1" class="anchor" href="#sass-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sass</h3>
+
+<p>Import Bootstrap into a Sass file (for example, <code>application.scss</code>) to get all of Bootstrap's styles, mixins and variables!</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@import</span> "<span class="pl-v">bootstrap</span>";</pre></div>
+
+<p>You can also include optional Bootstrap theme:</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@import</span> "<span class="pl-v">bootstrap/theme</span>";</pre></div>
+
+<p>The full list of Bootstrap variables can be found <a href="http://getbootstrap.com/customize/#less-variables">here</a>. You can override these by simply redefining the variable before the <code>@import</code> directive, e.g.:</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-smi">$navbar-default-bg</span>: <span class="pl-c1">#312312</span>;
+<span class="pl-smi">$light-orange</span>: <span class="pl-c1">#ff8c00</span>;
+<span class="pl-smi">$navbar-default-color</span>: <span class="pl-smi">$light-orange</span>;
+
+<span class="pl-k">@import</span> "<span class="pl-v">bootstrap</span>";</pre></div>
+
+<h3>
+<a id="eyeglass" class="anchor" href="#eyeglass" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eyeglass</h3>
+
+<p>Bootstrap is available as an <a href="https://github.com/sass-eyeglass/eyeglass">Eyeglass</a> module. After installing Bootstrap via NPM you can import the Bootstrap library via:</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@import</span> "<span class="pl-v">bootstrap-sass/bootstrap</span>"</pre></div>
+
+<p>or import only the parts of Bootstrap you need:</p>
+
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@import</span> "<span class="pl-v">bootstrap-sass/bootstrap/variables</span>";
+<span class="pl-k">@import</span> "<span class="pl-v">bootstrap-sass/bootstrap/mixins</span>";
+<span class="pl-k">@import</span> "<span class="pl-v">bootstrap-sass/bootstrap/carousel</span>";</pre></div>
+
+<h2>
+<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h2>
+
+<p>Bootstrap for Sass version may differ from the upstream version in the last number, known as
+<a href="http://semver.org/spec/v2.0.0.html">PATCH</a>. The patch version may be ahead of the corresponding upstream minor.
+This happens when we need to release Sass-specific changes.</p>
+
+<p>Before v3.3.2, Bootstrap for Sass version used to reflect the upstream version, with an additional number for
+Sass-specific changes. This was changed due to Bower and npm compatibility issues.</p>
+
+<p>The upstream versions vs the Bootstrap for Sass versions are:</p>
+
+<table>
+<thead>
+<tr>
+<th align="right">Upstream</th>
+<th align="right">Sass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">3.3.4+</td>
+<td align="right">same</td>
+</tr>
+<tr>
+<td align="right">3.3.2</td>
+<td align="right">3.3.3</td>
+</tr>
+<tr>
+<td align="right">&lt;= 3.3.1</td>
+<td align="right">3.3.1.x</td>
+</tr>
+</tbody>
+</table>
+
+<p>Always refer to <a href="/CHANGELOG.md">CHANGELOG.md</a> when upgrading.</p>
+
+<hr>
+
+<h2>
+<a id="development-and-contributing" class="anchor" href="#development-and-contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development and Contributing</h2>
+
+<p>If you'd like to help with the development of bootstrap-sass itself, read this section.</p>
+
+<h3>
+<a id="upstream-converter" class="anchor" href="#upstream-converter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Upstream Converter</h3>
+
+<p>Keeping bootstrap-sass in sync with upstream changes from Bootstrap used to be an error prone and time consuming manual process. With Bootstrap 3 we have introduced a converter that automates this.</p>
+
+<p><strong>Note: if you're just looking to <em>use</em> Bootstrap 3, see the <a href="#installation">installation</a> section above.</strong></p>
+
+<p>Upstream changes to the Bootstrap project can now be pulled in using the <code>convert</code> rake task.</p>
+
+<p>Here's an example run that would pull down the master branch from the main <a href="https://github.com/twbs/bootstrap">twbs/bootstrap</a> repo:</p>
+
+<pre><code>rake convert
 </code></pre>
 
-<p>You'll get the same benefits as those starting from scratch. Radical.</p>
+<p>This will convert the latest LESS to Sass and update to the latest JS.
+To convert a specific branch or version, pass the branch name or the commit hash as the first task argument:</p>
 
-<hr><p>As per the Bootstrap project we don't include the responsive styles by default. <code>@import "bootstrap-responsive";</code> to get them.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/thomas-mcdonald">thomas-mcdonald</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<pre><code>rake convert[e8a1df5f060bf7e6631554648e0abde150aedbe4]
+</code></pre>
+
+<p>The latest converter script is located <a href="https://github.com/twbs/bootstrap-sass/blob/master/tasks/converter/less_conversion.rb">here</a> and does the following:</p>
+
+<ul>
+<li>Converts upstream Bootstrap LESS files to its matching SCSS file.</li>
+<li>Copies all upstream JavaScript into <code>assets/javascripts/bootstrap</code>, a Sprockets manifest at <code>assets/javascripts/bootstrap-sprockets.js</code>, and a concatenation at <code>assets/javascripts/bootstrap.js</code>.</li>
+<li>Copies all upstream font files into <code>assets/fonts/bootstrap</code>.</li>
+<li>Sets <code>Bootstrap::BOOTSTRAP_SHA</code> in <a href="https://github.com/twbs/bootstrap-sass/blob/master/lib/bootstrap-sass/version.rb">version.rb</a> to the branch sha.</li>
+</ul>
+
+<p>This converter fully converts original LESS to SCSS. Conversion is automatic but requires instructions for certain transformations (see converter output).
+Please submit GitHub issues tagged with <code>conversion</code>.</p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>bootstrap-sass has a number of major contributors:</p>
+
+
+
+<ul>
+<li><a href="https://twitter.com/thomasmcdonald_">Thomas McDonald</a></li>
+<li><a href="http://www.trisweb.com">Tristan Harward</a></li>
+<li>Peter Gumeson</li>
+<li><a href="https://github.com/glebm">Gleb Mazovetskiy</a></li>
+</ul>
+
+<p>and a <a href="https://github.com/twbs/bootstrap-sass/graphs/contributors">significant number of other contributors</a>.</p>
+
+<h2>
+<a id="youre-in-good-company" class="anchor" href="#youre-in-good-company" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>You're in good company</h2>
+
+<p>bootstrap-sass is used to build some awesome projects all over the web, including
+<a href="https://diasporafoundation.org/">Diaspora</a>, <a href="https://github.com/sferik/rails_admin">rails_admin</a>,
+Michael Hartl's <a href="https://www.railstutorial.org/">Rails Tutorial</a>, <a href="http://gitlabhq.com/">gitlabhq</a> and
+<a href="http://getkandan.com/">kandan</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/grazies/bootstrap-sass">bootstrap-sass</a> is maintained by <a href="https://github.com/grazies">grazies</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    </section>
+
+  
   </body>
 </html>
